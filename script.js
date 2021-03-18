@@ -13,7 +13,7 @@ function makeDeck() {
     }
     return deck;
 }
-//test
+
 function shuffle(deck){
     var rand1, rand2, temp
     let count=2000;
@@ -31,4 +31,3 @@ function shuffle(deck){
 let cards=makeDeck();
 let shuffledDeck=shuffle(cards);
 console.log(shuffledDeck);
-// hello theregstrsfs
