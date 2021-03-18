@@ -15,7 +15,7 @@ function makeDeck() {
 }
 
 function shuffle(deck){
-    var rand1, rand2, temp
+    var rand1, rand2, temp;
     let count=2000;
     // Swaps 2 random records in the array and repeats 2000 times
     for(let i=0; i<count-1;i++){
@@ -28,6 +28,34 @@ function shuffle(deck){
     return deck;
 }
 
+function pickCards (shuffledDeck){
+    let player1Deck= [];
+    let player2Deck=[];
+    let i=1;
+    while (i <shuffledDeck.length){
+        if (shuffledDeck[i-1].suit==shuffledDeck[i].suit){
+            if (shuffledDeck[i-1].value > shuffledDeck[i].value){
+                player1Deck.push({Suit:shuffledDeck[i-1].suit, Value: shuffledDeck[i-1].value});
+                player1Deck.push({Suit:shuffledDeck[i].Suit, Value: shuffledDeck[i].Value});
+            }
+            else{
+                player2Deck.push({Suit:shuffledDeck[i-1].suit, Value: shuffledDeck[i-1].value});
+                player2Deck.push({Suit:shuffledDeck[i].Suit, Value: shuffledDeck[i].Value});
+            }
+        }
+        else{
+            let q=cardComparison(shuffledDeck,player1Deck,player2Deck)
+        }
+
+        }
+        i=i+2
+    }
+
+function cardComparison(shuffledDeck,player1Deck,player2Deck){
+
+}
+
 let cards=makeDeck();
 let shuffledDeck=shuffle(cards);
 console.log(shuffledDeck);
+let game=pickCards(shuffledDeck);
